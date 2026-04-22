@@ -1,38 +1,52 @@
 import { Link } from "@tanstack/react-router";
 import type { ProjectCase } from "@/data/projects";
 
-export function ProjectCard({ project }: { project: ProjectCase }) {
+export function ProjectCard({
+  project,
+  index,
+}: {
+  project: ProjectCase;
+  index?: number;
+}) {
   return (
-    <article className="group flex flex-col justify-between rounded-lg border border-[var(--hairline)] bg-card p-7 transition-all hover:border-foreground/30 hover:shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)]">
-      <div>
-        <p className="mb-3 text-xs font-medium uppercase tracking-wider text-accent">
-          Case Study
-        </p>
-        <h3 className="text-xl font-semibold tracking-tight text-foreground">
-          {project.name}
-        </h3>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          {project.shortDescription}
-        </p>
+    <Link
+      to="/projects/$slug"
+      params={{ slug: project.slug }}
+      className="group block border-t border-[var(--hairline)] py-8 transition-colors"
+    >
+      <div className="grid gap-4 md:grid-cols-12 md:gap-8">
+        <div className="md:col-span-1">
+          <span className="font-mono text-xs text-muted-foreground">
+            {String((index ?? 0) + 1).padStart(2, "0")}
+          </span>
+        </div>
+        <div className="md:col-span-7">
+          <h3 className="font-serif text-2xl font-normal tracking-tight text-foreground transition-colors group-hover:text-accent md:text-3xl">
+            {project.name}
+          </h3>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-[15px]">
+            {project.shortDescription}
+          </p>
+        </div>
+        <div className="flex items-end justify-between md:col-span-4 md:items-start md:justify-end">
+          <div className="flex flex-wrap gap-1.5 md:justify-end">
+            {project.tools.slice(0, 3).map((tool) => (
+              <span
+                key={tool}
+                className="rounded-full border border-[var(--hairline)] px-2.5 py-0.5 text-[11px] text-muted-foreground"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+          <span
+            aria-hidden
+            className="ml-4 text-foreground transition-transform group-hover:translate-x-1 md:ml-6"
+          >
+            →
+          </span>
+        </div>
       </div>
-      <Link
-        to="/projects/$slug"
-        params={{ slug: project.slug }}
-        className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-accent"
-      >
-        View Case
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="transition-transform group-hover:translate-x-0.5"
-        >
-          <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </Link>
-    </article>
+    </Link>
   );
 }
