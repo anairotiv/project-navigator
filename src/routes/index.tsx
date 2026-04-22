@@ -350,7 +350,7 @@ function Index() {
         <div className="mx-auto max-w-6xl px-6 py-28 md:px-10 md:py-36">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-3">
-              <p className="eyebrow">§ 07 — Contact</p>
+              <p className="eyebrow">§ 05 — Contact</p>
             </div>
             <div className="md:col-span-9">
               <h2 className="font-serif text-4xl font-light leading-[1.1] tracking-tight md:text-6xl">
