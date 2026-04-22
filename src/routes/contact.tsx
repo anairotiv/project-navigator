@@ -22,43 +22,59 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   return (
     <section>
-      <div className="mx-auto max-w-3xl px-6 py-20 md:py-28">
-        <p className="text-xs font-medium uppercase tracking-wider text-accent">Contact</p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-5xl">
-          Let's talk about your project
-        </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-          Whether you need someone to structure a new initiative from scratch or take ownership of an
-          ongoing project, I'm available to lead delivery from start to finish.
-        </p>
+      <div className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
+        <div className="grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-3">
+            <p className="eyebrow">Contact</p>
+          </div>
+          <div className="md:col-span-9">
+            <h1 className="font-serif text-4xl font-light leading-[1.05] tracking-tight md:text-6xl">
+              Let's talk about your <em className="italic text-accent">project</em>
+            </h1>
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              Whether you need someone to structure a new initiative from scratch or take ownership
+              of an ongoing project, I'm available to lead delivery from start to finish.
+            </p>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2">
-          <a
-            href="mailto:hello@anavitorialuz.com"
-            className="group flex flex-col gap-3 bg-card p-8 transition-colors hover:bg-secondary/50"
-          >
-            <p className="text-xs font-medium uppercase tracking-wider text-accent">Email</p>
-            <p className="text-lg font-medium text-foreground transition-colors group-hover:text-accent">
-              hello@anavitorialuz.com
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Best for project briefs and detailed discussions.
-            </p>
-          </a>
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col gap-3 bg-card p-8 transition-colors hover:bg-secondary/50"
-          >
-            <p className="text-xs font-medium uppercase tracking-wider text-accent">LinkedIn</p>
-            <p className="text-lg font-medium text-foreground transition-colors group-hover:text-accent">
-              linkedin.com/in/anavitorialuz
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Connect for professional networking and updates.
-            </p>
-          </a>
+            <ul className="mt-16 divide-y divide-[var(--hairline)] border-y border-[var(--hairline)]">
+              <li>
+                <a
+                  href="mailto:hello@anavitorialuz.com"
+                  className="group grid gap-2 py-7 md:grid-cols-12 md:gap-8"
+                >
+                  <span className="eyebrow md:col-span-3 md:pt-2">Email</span>
+                  <span className="md:col-span-7">
+                    <span className="font-serif text-2xl font-light tracking-tight text-foreground transition-colors group-hover:text-accent md:text-3xl">
+                      hello@anavitorialuz.com
+                    </span>
+                    <span className="mt-1 block text-sm text-muted-foreground">
+                      Best for project briefs and detailed discussions.
+                    </span>
+                  </span>
+                  <span className="text-foreground md:col-span-2 md:text-right md:text-2xl">↗</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group grid gap-2 py-7 md:grid-cols-12 md:gap-8"
+                >
+                  <span className="eyebrow md:col-span-3 md:pt-2">LinkedIn</span>
+                  <span className="md:col-span-7">
+                    <span className="font-serif text-2xl font-light tracking-tight text-foreground transition-colors group-hover:text-accent md:text-3xl">
+                      linkedin.com/in/anavitorialuz
+                    </span>
+                    <span className="mt-1 block text-sm text-muted-foreground">
+                      Connect for professional networking and updates.
+                    </span>
+                  </span>
+                  <span className="text-foreground md:col-span-2 md:text-right md:text-2xl">↗</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

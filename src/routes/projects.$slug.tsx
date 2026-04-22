@@ -22,7 +22,7 @@ export const Route = createFileRoute("/projects/$slug")({
   },
   notFoundComponent: () => (
     <div className="mx-auto max-w-3xl px-6 py-32 text-center">
-      <h1 className="text-3xl font-semibold">Project not found</h1>
+      <h1 className="font-serif text-4xl font-light">Project not found</h1>
       <Link to="/projects" className="mt-6 inline-block text-sm text-accent hover:underline">
         ← Back to projects
       </Link>
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/projects/$slug")({
   ),
   errorComponent: ({ error }) => (
     <div className="mx-auto max-w-3xl px-6 py-32 text-center">
-      <h1 className="text-2xl font-semibold">Something went wrong</h1>
+      <h1 className="font-serif text-3xl font-light">Something went wrong</h1>
       <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
     </div>
   ),
@@ -41,18 +41,28 @@ function Section({
   label,
   title,
   children,
+  highlight = false,
 }: {
-  label?: string;
+  label: string;
   title: string;
   children: React.ReactNode;
+  highlight?: boolean;
 }) {
   return (
-    <section className="border-t border-[var(--hairline)] py-10 first:border-t-0 first:pt-0">
-      {label && (
-        <p className="text-xs font-medium uppercase tracking-wider text-accent">{label}</p>
-      )}
-      <h2 className="mt-2 text-2xl font-semibold tracking-tight md:text-3xl">{title}</h2>
-      <div className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+    <section className="grid gap-6 border-t border-[var(--hairline)] py-12 md:grid-cols-12 md:gap-10 md:py-16">
+      <div className="md:col-span-3">
+        <p className="eyebrow">
+          § {label}
+        </p>
+        <h2
+          className={`mt-3 font-serif text-2xl font-light tracking-tight md:text-3xl ${
+            highlight ? "italic text-accent" : ""
+          }`}
+        >
+          {title}
+        </h2>
+      </div>
+      <div className="text-base leading-relaxed text-foreground md:col-span-9 md:text-[17px]">
         {children}
       </div>
     </section>
@@ -61,11 +71,13 @@ function Section({
 
 function BulletList({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-3">
-      {items.map((item) => (
-        <li key={item} className="flex gap-3">
-          <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-          <span>{item}</span>
+    <ul className="divide-y divide-[var(--hairline)] border-y border-[var(--hairline)]">
+      {items.map((item, i) => (
+        <li key={item} className="flex gap-5 py-4">
+          <span className="font-mono text-xs text-muted-foreground">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <span className="text-foreground">{item}</span>
         </li>
       ))}
     </ul>
@@ -81,27 +93,32 @@ function ProjectCasePage() {
     <article>
       {/* HEADER */}
       <header className="border-b border-[var(--hairline)]">
-        <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-28">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+            className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
           >
             ← All projects
           </Link>
-          <p className="mt-8 text-xs font-medium uppercase tracking-wider text-accent">
-            Case Study
-          </p>
-          <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-            {project.name}
-          </h1>
-          <p className="mt-5 text-lg leading-relaxed text-muted-foreground md:text-xl">
-            {project.shortDescription}
-          </p>
+
+          <div className="mt-12 grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">Case Study · {String(currentIndex + 1).padStart(2, "0")}</p>
+            </div>
+            <div className="md:col-span-9">
+              <h1 className="font-serif text-5xl font-light leading-[1.02] tracking-tight md:text-7xl">
+                {project.name}
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+                {project.shortDescription}
+              </p>
+            </div>
+          </div>
         </div>
       </header>
 
       {/* BODY */}
-      <div className="mx-auto max-w-3xl px-6 py-12 md:py-16">
+      <div className="mx-auto max-w-6xl px-6 py-4 md:px-10 md:py-8">
         <Section label="01" title="Context">
           <p>{project.context}</p>
         </Section>
@@ -118,10 +135,8 @@ function ProjectCasePage() {
           <BulletList items={project.keyActions} />
         </Section>
 
-        <Section label="05" title="Complexity">
-          <div className="rounded-lg border border-accent/20 bg-accent/5 p-6">
-            <BulletList items={project.complexity} />
-          </div>
+        <Section label="05" title="Complexity" highlight>
+          <BulletList items={project.complexity} />
         </Section>
 
         <Section label="06" title="Results">
@@ -133,7 +148,7 @@ function ProjectCasePage() {
             {project.tools.map((tool) => (
               <span
                 key={tool}
-                className="rounded-md border border-[var(--hairline)] bg-card px-3 py-1.5 text-sm font-medium text-foreground"
+                className="rounded-full border border-[var(--hairline)] px-3 py-1 text-sm text-foreground"
               >
                 {tool}
               </span>
@@ -148,21 +163,24 @@ function ProjectCasePage() {
 
       {/* NEXT */}
       <div className="border-t border-[var(--hairline)]">
-        <div className="mx-auto max-w-3xl px-6 py-16">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24">
           <Link
             to="/projects/$slug"
             params={{ slug: nextProject.slug }}
-            className="group block rounded-xl border border-[var(--hairline)] bg-card p-8 transition-all hover:border-foreground/30"
+            className="group grid gap-4 md:grid-cols-12 md:gap-10"
           >
-            <p className="text-xs font-medium uppercase tracking-wider text-accent">
-              Next case
-            </p>
-            <p className="mt-2 text-2xl font-semibold tracking-tight transition-colors group-hover:text-accent">
-              {nextProject.name} →
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {nextProject.shortDescription}
-            </p>
+            <p className="eyebrow md:col-span-3">Next case</p>
+            <div className="md:col-span-9">
+              <p className="font-serif text-3xl font-light tracking-tight text-foreground transition-colors group-hover:text-accent md:text-5xl">
+                {nextProject.name}{" "}
+                <span aria-hidden className="inline-block transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </p>
+              <p className="mt-3 max-w-xl text-sm text-muted-foreground md:text-base">
+                {nextProject.shortDescription}
+              </p>
+            </div>
           </Link>
         </div>
       </div>

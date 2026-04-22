@@ -25,19 +25,19 @@ export const Route = createFileRoute("/")({
 const skills = [
   "End-to-End Project Management",
   "Stakeholder Management",
-  "Agile Methodologies (Scrum, Kanban)",
-  "Jira (workflows & automations)",
+  "Agile — Scrum & Kanban",
+  "Jira — workflows & automations",
   "Confluence",
   "Scope, Timeline & Delivery",
   "Client Communication",
 ];
 
 const howIWork = [
-  "Structuring scope and priorities",
-  "Organizing timelines and deliverables",
-  "Clear and direct stakeholder communication",
-  "Fast adaptation to changes",
-  "Focus on delivering results even in complex scenarios",
+  { k: "Structure", v: "Defining scope, priorities and what success looks like." },
+  { k: "Cadence", v: "Organizing timelines, deliverables and a rhythm the team can sustain." },
+  { k: "Communication", v: "Clear, direct alignment with stakeholders — no ambiguity." },
+  { k: "Adaptation", v: "Reading change quickly and re-planning without losing direction." },
+  { k: "Delivery", v: "Shipping outcomes, even when the environment is complex." },
 ];
 
 const clients = [
@@ -51,183 +51,237 @@ const clients = [
 function Index() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — editorial, asymmetric */}
       <section className="border-b border-[var(--hairline)]">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <p className="mb-6 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-accent">
-            <span className="h-px w-8 bg-accent" />
-            Project Manager
-          </p>
-          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Ana Vitória Luz
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Project Manager with a background in technology and innovation,
-            experienced in leading end-to-end projects, managing stakeholders,
-            and ensuring structured delivery in dynamic and resource-constrained
-            environments.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <Link
-              to="/projects"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              View Projects
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-md border border-[var(--hairline)] bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT */}
-      <section className="border-b border-[var(--hairline)]">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-3 md:py-28">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-accent">About</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight">From engineering to leadership</h2>
-          </div>
-          <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:col-span-2">
-            <p>
-              I started my career in technology as a developer and quickly transitioned into project
-              management, where I found my strength in connecting strategy, execution, and people.
-            </p>
-            <p>
-              Over time, I evolved from an intern to managing projects with full ownership, including
-              scope definition, timeline management, stakeholder communication, and delivery.
-            </p>
-            <p>
-              I have experience working in dynamic environments with small teams, where I was
-              responsible for structuring processes, managing client relationships, and ensuring
-              project success even under complex conditions.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* PROJECTS */}
-      <section id="projects" className="border-b border-[var(--hairline)]">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="flex items-end justify-between gap-8">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wider text-accent">Selected Work</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">Projects</h2>
+        <div className="mx-auto max-w-6xl px-6 pb-20 pt-20 md:px-10 md:pb-32 md:pt-28">
+          <div className="grid gap-10 md:grid-cols-12 md:gap-12">
+            <div className="md:col-span-7">
+              <p className="eyebrow flex items-center gap-3">
+                <span className="h-px w-6 bg-foreground/40" />
+                Project Manager · est. Tech & Innovation
+              </p>
+              <h1 className="mt-8 font-serif text-5xl font-light leading-[1.02] tracking-tight text-foreground md:text-7xl lg:text-[5.5rem]">
+                Ana Vitória <em className="italic font-normal text-accent">Luz</em>
+              </h1>
+              <p className="mt-10 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                I lead projects end-to-end — from scope and stakeholders to timeline
+                and delivery — in dynamic, resource-constrained environments where
+                structure and clarity make the difference.
+              </p>
+              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <Link
+                  to="/projects"
+                  className="group inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                >
+                  <span className="border-b border-foreground pb-0.5 transition-colors group-hover:border-accent group-hover:text-accent">
+                    View selected work
+                  </span>
+                  <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+                <Link
+                  to="/contact"
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  Or get in touch
+                </Link>
+              </div>
             </div>
-            <Link
-              to="/projects"
-              className="hidden text-sm font-medium text-foreground hover:text-accent md:inline"
-            >
-              All projects →
-            </Link>
+
+            <aside className="md:col-span-5 md:pt-2">
+              <div className="space-y-8 md:border-l md:border-[var(--hairline)] md:pl-10">
+                <div>
+                  <p className="eyebrow">Currently</p>
+                  <p className="mt-2 text-sm text-foreground">
+                    Leading delivery across innovation, retail and aviation projects.
+                  </p>
+                </div>
+                <div>
+                  <p className="eyebrow">Based in</p>
+                  <p className="mt-2 text-sm text-foreground">São Paulo, Brazil</p>
+                </div>
+                <div>
+                  <p className="eyebrow">Tools of trade</p>
+                  <p className="mt-2 text-sm text-foreground">
+                    Jira · Confluence · Scrum · Kanban
+                  </p>
+                </div>
+              </div>
+            </aside>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
+        </div>
+      </section>
+
+      {/* ABOUT — editorial paragraph */}
+      <section className="border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">§ 01 — About</p>
+            </div>
+            <div className="md:col-span-9">
+              <p className="font-serif text-2xl font-light leading-snug tracking-tight text-foreground md:text-[2rem] md:leading-[1.25]">
+                I started as a developer and quickly moved into project
+                management, where I found my strength in connecting{" "}
+                <em className="italic text-accent">strategy, execution and people</em>.
+                Over time, I evolved from intern to leading projects with full
+                ownership — scope, timeline, stakeholders, delivery.
+              </p>
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                I work best in dynamic environments with small teams, structuring
+                processes, managing client relationships and ensuring projects
+                land — even under complex conditions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PROJECTS — list-style editorial */}
+      <section id="projects" className="border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">§ 02 — Selected Work</p>
+            </div>
+            <div className="md:col-span-9">
+              <h2 className="font-serif text-4xl font-light tracking-tight md:text-5xl">
+                Projects led <em className="italic text-accent">end-to-end</em>
+              </h2>
+              <p className="mt-5 max-w-xl text-base text-muted-foreground">
+                A selection of engagements where I owned scope, stakeholders and delivery.
+              </p>
+
+              <div className="mt-14">
+                {projects.map((project, idx) => (
+                  <ProjectCard key={project.slug} project={project} index={idx} />
+                ))}
+                <div className="border-t border-[var(--hairline)]" />
+              </div>
+
+              <Link
+                to="/projects"
+                className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-foreground"
+              >
+                <span className="border-b border-foreground pb-0.5">All projects</span>
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* SKILLS */}
       <section className="border-b border-[var(--hairline)]">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-3 md:py-28">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-accent">Skills</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight">Core capabilities</h2>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Built across years of hands-on delivery in complex environments.
-            </p>
+        <div className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">§ 03 — Skills</p>
+            </div>
+            <div className="md:col-span-9">
+              <h2 className="font-serif text-4xl font-light tracking-tight md:text-5xl">
+                Core capabilities
+              </h2>
+              <ul className="mt-12 grid grid-cols-1 sm:grid-cols-2">
+                {skills.map((skill, i) => (
+                  <li
+                    key={skill}
+                    className="flex items-baseline gap-4 border-t border-[var(--hairline)] py-4 last:border-b sm:[&:nth-last-child(-n+2)]:border-b sm:[&:nth-child(odd)]:border-r sm:[&:nth-child(odd)]:border-r-[var(--hairline)] sm:[&:nth-child(odd)]:pr-6 sm:[&:nth-child(even)]:pl-6"
+                  >
+                    <span className="font-mono text-xs text-muted-foreground">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[15px] text-foreground">{skill}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-2 md:col-span-2">
-            {skills.map((skill) => (
+        </div>
+      </section>
+
+      {/* HOW I WORK */}
+      <section className="border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">§ 04 — Approach</p>
+            </div>
+            <div className="md:col-span-9">
+              <h2 className="font-serif text-4xl font-light tracking-tight md:text-5xl">
+                How I work
+              </h2>
+              <dl className="mt-12 divide-y divide-[var(--hairline)] border-y border-[var(--hairline)]">
+                {howIWork.map((item) => (
+                  <div
+                    key={item.k}
+                    className="grid gap-2 py-6 md:grid-cols-12 md:gap-8 md:py-7"
+                  >
+                    <dt className="font-serif text-xl italic text-accent md:col-span-3 md:text-2xl">
+                      {item.k}
+                    </dt>
+                    <dd className="text-base leading-relaxed text-foreground md:col-span-9 md:text-lg">
+                      {item.v}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PULL QUOTE */}
+      <section className="border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-5xl px-6 py-28 text-center md:px-10 md:py-36">
+          <p className="eyebrow">Career growth</p>
+          <blockquote className="mt-8 font-serif text-3xl font-light leading-[1.2] tracking-tight text-foreground md:text-5xl">
+            “Started as an intern and rapidly progressed to{" "}
+            <em className="italic text-accent">managing projects</em> — taking
+            ownership of delivery, communication and process organization.”
+          </blockquote>
+        </div>
+      </section>
+
+      {/* CLIENTS */}
+      <section className="border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24">
+          <p className="eyebrow text-center">Projects & Clients</p>
+          <ul className="mt-12 grid grid-cols-2 gap-y-10 sm:grid-cols-3 md:grid-cols-5">
+            {clients.map((client) => (
               <li
-                key={skill}
-                className="bg-card px-5 py-4 text-sm font-medium text-foreground"
+                key={client}
+                className="text-center font-serif text-lg italic text-muted-foreground transition-colors hover:text-foreground md:text-xl"
               >
-                {skill}
+                {client}
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* HOW I WORK */}
-      <section className="border-b border-[var(--hairline)] bg-secondary/40">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-3 md:py-28">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-accent">Approach</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight">How I work</h2>
-          </div>
-          <div className="md:col-span-2">
-            <ol className="space-y-px overflow-hidden rounded-lg border border-[var(--hairline)] bg-[var(--hairline)]">
-              {howIWork.map((item, idx) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-4 bg-card px-6 py-5"
-                >
-                  <span className="mt-0.5 font-mono text-xs text-accent">
-                    0{idx + 1}
-                  </span>
-                  <span className="text-sm text-foreground md:text-base">{item}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* EXPERIENCE HIGHLIGHT */}
-      <section className="border-b border-[var(--hairline)]">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-          <div className="rounded-2xl border border-[var(--hairline)] bg-card p-10 md:p-14">
-            <p className="text-xs font-medium uppercase tracking-wider text-accent">Career growth</p>
-            <p className="mt-4 max-w-3xl text-2xl font-medium leading-relaxed tracking-tight text-foreground md:text-3xl">
-              "Started as an intern and rapidly progressed to managing projects, taking ownership of
-              delivery, communication, and process organization."
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CLIENTS */}
-      <section className="border-b border-[var(--hairline)]">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-          <p className="text-center text-xs font-medium uppercase tracking-wider text-accent">
-            Projects & Clients
-          </p>
-          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-[var(--hairline)] bg-[var(--hairline)] sm:grid-cols-3 md:grid-cols-5">
-            {clients.map((client) => (
-              <div
-                key={client}
-                className="flex h-24 items-center justify-center bg-card px-4 text-center text-sm font-medium tracking-tight text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {client}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CONTACT CTA */}
       <section>
-        <div className="mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
-          <h2 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight md:text-5xl">
-            Have a project that needs structure and delivery?
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
-            Let's talk about how I can help lead it from scope to delivery.
-          </p>
-          <div className="mt-10">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Get in touch
-            </Link>
+        <div className="mx-auto max-w-6xl px-6 py-28 md:px-10 md:py-36">
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">§ 05 — Contact</p>
+            </div>
+            <div className="md:col-span-9">
+              <h2 className="font-serif text-4xl font-light leading-[1.1] tracking-tight md:text-6xl">
+                Have a project that needs{" "}
+                <em className="italic text-accent">structure</em> and delivery?
+              </h2>
+              <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
+                Let's talk about how I can help lead it from scope to delivery.
+              </p>
+              <Link
+                to="/contact"
+                className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-foreground"
+              >
+                <span className="border-b border-foreground pb-0.5">Get in touch</span>
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
