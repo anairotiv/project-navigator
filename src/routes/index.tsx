@@ -48,6 +48,68 @@ const clients = [
   "Perini Business Park",
 ];
 
+const systems = [
+  {
+    k: "Jira & Confluence",
+    v: "Led the implementation of Jira and Confluence as the team's operational backbone — from instance setup to adoption.",
+  },
+  {
+    k: "Workflow Design",
+    v: "Designed custom workflows and automations to remove manual overhead and enforce consistency across squads.",
+  },
+  {
+    k: "Onboarding & Training",
+    v: "Structured onboarding paths and trained teams on tooling, agile rituals and internal documentation standards.",
+  },
+  {
+    k: "Intranet Migration",
+    v: "Led the migration of the company intranet from Google Sites to Confluence, restructuring information architecture in the process.",
+  },
+  {
+    k: "Process & Documentation",
+    v: "Defined and documented internal processes — turning tribal knowledge into a maintainable operational layer.",
+  },
+];
+
+const aiProjects = [
+  {
+    name: "OZHelp",
+    purpose: "Internal AI chatbot for employee support.",
+    impact:
+      "Reduced repetitive support requests and gave employees instant, contextual answers — freeing internal teams for higher-value work.",
+  },
+  {
+    name: "OZAssist",
+    purpose: "AI assistant for product-related questions.",
+    impact:
+      "Accelerated product knowledge access for internal and client-facing teams, reducing time-to-answer and improving consistency.",
+  },
+  {
+    name: "OZConverter",
+    purpose: "File conversion tool for map data.",
+    impact:
+      "Automated a previously manual conversion pipeline, cutting delivery time and eliminating a recurring source of errors.",
+  },
+  {
+    name: "OZCleanup",
+    purpose: "Data validation and digital twin consistency.",
+    impact:
+      "Ensured integrity across digital twin data, enabling reliable downstream automation and reporting.",
+  },
+  {
+    name: "OZMonitoring",
+    purpose: "Network monitoring and visualization system.",
+    impact:
+      "Gave operations real-time visibility into infrastructure health, supporting faster diagnosis and proactive response.",
+  },
+  {
+    name: "NetBox Integration",
+    purpose: "Infrastructure documentation system.",
+    impact:
+      "Centralized infrastructure documentation, replacing scattered records with a single source of truth for engineering teams.",
+  },
+];
+
 function Index() {
   return (
     <>
