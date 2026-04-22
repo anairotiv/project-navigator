@@ -292,6 +292,92 @@ function Index() {
         </div>
       </section>
 
+      {/* SYSTEMS & PROCESS IMPLEMENTATION */}
+      <section className="border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">§ 05 — Systems & Process</p>
+            </div>
+            <div className="md:col-span-9">
+              <h2 className="font-serif text-4xl font-light tracking-tight md:text-5xl">
+                Systems &{" "}
+                <em className="italic text-accent">process implementation</em>
+              </h2>
+              <p className="mt-5 max-w-xl text-base text-muted-foreground">
+                Beyond delivery, I lead the structuring of the tools and
+                processes teams rely on — turning operational chaos into a
+                maintainable foundation.
+              </p>
+              <dl className="mt-12 divide-y divide-[var(--hairline)] border-y border-[var(--hairline)]">
+                {systems.map((item) => (
+                  <div
+                    key={item.k}
+                    className="grid gap-2 py-6 md:grid-cols-12 md:gap-8 md:py-7"
+                  >
+                    <dt className="font-serif text-xl italic text-accent md:col-span-3 md:text-2xl">
+                      {item.k}
+                    </dt>
+                    <dd className="text-base leading-relaxed text-foreground md:col-span-9 md:text-lg">
+                      {item.v}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI & INNOVATION PROJECTS */}
+      <section className="border-b border-[var(--hairline)]">
+        <div className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
+          <div className="grid gap-10 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">§ 06 — AI & Innovation</p>
+            </div>
+            <div className="md:col-span-9">
+              <h2 className="font-serif text-4xl font-light tracking-tight md:text-5xl">
+                AI & <em className="italic text-accent">innovation</em> projects
+              </h2>
+              <p className="mt-5 max-w-xl text-base text-muted-foreground">
+                Internal initiatives where I helped drive automation, data
+                consistency and operational intelligence across the company.
+              </p>
+
+              <ul className="mt-14 border-t border-[var(--hairline)]">
+                {aiProjects.map((p, i) => (
+                  <li
+                    key={p.name}
+                    className="grid gap-4 border-b border-[var(--hairline)] py-8 md:grid-cols-12 md:gap-8"
+                  >
+                    <div className="md:col-span-1">
+                      <span className="font-mono text-xs text-muted-foreground">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <div className="md:col-span-4">
+                      <h3 className="font-serif text-2xl font-normal tracking-tight text-foreground md:text-3xl">
+                        {p.name}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                        {p.purpose}
+                      </p>
+                    </div>
+                    <div className="md:col-span-7">
+                      <p className="eyebrow">Impact</p>
+                      <p className="mt-2 text-base leading-relaxed text-foreground md:text-[17px]">
+                        {p.impact}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PULL QUOTE */}
       <section className="border-b border-[var(--hairline)]">
         <div className="mx-auto max-w-5xl px-6 py-28 text-center md:px-10 md:py-36">
