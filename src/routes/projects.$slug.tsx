@@ -17,7 +17,7 @@ export const Route = createFileRoute("/projects/$slug")({
             { property: "og:title", content: `${project.name} — Case Study` },
             { property: "og:description", content: project.shortDescription },
           ]
-        : [{ title: "Case Study — Ana Vitória Luz" }],
+        : [{ title: "Success story  — Ana Vitória Luz" }],
     };
   },
   notFoundComponent: () => (

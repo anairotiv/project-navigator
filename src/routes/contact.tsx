@@ -32,20 +32,19 @@ function ContactPage() {
               Let's talk about your <em className="italic text-accent">project</em>
             </h1>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              Whether you need someone to structure a new initiative from scratch or take ownership
-              of an ongoing project, I'm available to lead delivery from start to finish.
+              Project management · structure · delivery
             </p>
 
             <ul className="mt-16 divide-y divide-[var(--hairline)] border-y border-[var(--hairline)]">
               <li>
                 <a
-                  href="mailto:hello@anavitorialuz.com"
+                  href="mailto:anavitoriasln@gmail.com"
                   className="group grid gap-2 py-7 md:grid-cols-12 md:gap-8"
                 >
                   <span className="eyebrow md:col-span-3 md:pt-2">Email</span>
                   <span className="md:col-span-7">
                     <span className="font-serif text-2xl font-light tracking-tight text-foreground transition-colors group-hover:text-accent md:text-3xl">
-                      hello@anavitorialuz.com
+                      anavitoriasln@gmail.com
                     </span>
                     <span className="mt-1 block text-sm text-muted-foreground">
                       Best for project briefs and detailed discussions.
@@ -56,7 +55,7 @@ function ContactPage() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/in/ana-vitoria-luz-546201219/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group grid gap-2 py-7 md:grid-cols-12 md:gap-8"

@@ -39,24 +39,13 @@ function AboutPage() {
                 management, where I found my strength in connecting strategy, execution and people.
               </p>
               <p>
-                Over time, I evolved from an intern to managing projects with full ownership —
-                scope definition, timeline management, stakeholder communication and delivery.
-              </p>
-              <p>
-                I have experience working in dynamic environments with small teams, where I was
+                I have experience working in dynamic environments, where I was
                 responsible for structuring processes, managing client relationships, and ensuring
                 project success even under complex conditions.
               </p>
             </div>
 
-            <div className="mt-16 border-t border-[var(--hairline)] pt-10">
-              <p className="eyebrow">Career growth</p>
-              <p className="mt-4 max-w-3xl font-serif text-2xl font-light leading-snug tracking-tight text-foreground md:text-3xl">
-                Started as an intern and rapidly progressed to{" "}
-                <em className="italic text-accent">managing projects</em> —
-                taking ownership of delivery, communication and process organization.
-              </p>
-            </div>
+            
           </div>
         </div>
       </div>

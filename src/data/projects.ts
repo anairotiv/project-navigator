@@ -19,7 +19,7 @@ export const projects: ProjectCase[] = [
     name: "Partage Malls",
     client: "Partage Malls",
     shortDescription:
-      "Interactive map project for a shopping mall, structured from scratch.",
+      "Interactive Wayfinding System · End-to-End Delivery under Time Constraint",
     context:
       "Partage Malls required an interactive wayfinding map for one of its shopping centers, designed to improve the visitor experience and modernize physical navigation throughout the mall.",
     challenge:
@@ -34,7 +34,6 @@ export const projects: ProjectCase[] = [
     ],
     complexity: [
       "No baseline documentation or process at project start",
-      "Multiple stakeholders with diverging priorities",
       "Small delivery team requiring tight coordination",
     ],
     results: [
@@ -50,20 +49,20 @@ export const projects: ProjectCase[] = [
     ],
   },
   {
-    slug: "zurich-airport",
-    name: "Zurich Airport",
-    client: "Zurich Airport",
+    slug: "zurich-airport Brazil",
+    name: "Zurich Airport Brazil",
+    client: "Zurich Airport Brazil",
     shortDescription:
-      "Project involving requirement management and communication with international stakeholders.",
+      "Project involving requirement management and communication with stakeholders.",
     context:
-      "Engagement with Zurich Airport focused on capturing, organizing, and delivering complex requirements in an international, multi-cultural setting.",
+      "Engagement with Zurich Airport Brazil focused on capturing, organizing, and delivering complex requirements, multi-cultural setting.",
     challenge:
       "Coordinating requirements across multiple international stakeholders, time zones, and languages while keeping a single source of truth and maintaining delivery cadence.",
     myRole:
       "Led requirement management and acted as the primary point of contact with international stakeholders.",
     keyActions: [
       "Structured the requirements pipeline from intake to acceptance",
-      "Coordinated recurring alignment meetings with international stakeholders",
+      "Coordinated recurring alignment meetings with stakeholders",
       "Translated business needs into clear specifications for the delivery team",
       "Managed change requests and impact analysis throughout the project",
     ],
@@ -71,6 +70,7 @@ export const projects: ProjectCase[] = [
       "International stakeholders across multiple time zones",
       "High volume of requirements requiring rigorous traceability",
       "Demanding stakeholders with strict expectations",
+      "Execution and structuring happening simultaneously",
     ],
     results: [
       "Single, validated source of truth for all project requirements",
@@ -106,9 +106,10 @@ export const projects: ProjectCase[] = [
       "Limited handover from the previous phase",
       "Independent ownership with no project layer above",
       "Need to reorganize artifacts while delivering in parallel",
+      "High dependency on stakeholder validation to unblock critical steps"
     ],
     results: [
-      "Phase delivered within the committed scope and timeline",
+      "Phase delivered within the committed scope",
       "Reorganized documentation that improved future maintainability",
       "Reinforced client trust through clear ownership and communication",
     ],
@@ -141,6 +142,7 @@ export const projects: ProjectCase[] = [
       "Innovation context with high uncertainty and shifting scope",
       "Need to translate experimental work into structured delivery",
       "Small team requiring efficient coordination",
+      "Single stakeholder dependency with delayed responses, creating decision bottlenecks and impacting timeline predictability",
     ],
     results: [
       "Innovation outcomes delivered with clear documentation",
@@ -172,7 +174,6 @@ export const projects: ProjectCase[] = [
       "Managed risks and changes proactively across the lifecycle",
     ],
     complexity: [
-      "End-to-end ownership with no specialist hand-offs",
       "Resource-constrained environment requiring tight prioritization",
       "Multiple stakeholders involved across the project lifecycle",
     ],

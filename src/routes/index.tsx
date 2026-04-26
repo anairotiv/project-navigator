@@ -23,21 +23,22 @@ export const Route = createFileRoute("/")({
 });
 
 const skills = [
-  "End-to-End Project Management",
-  "Stakeholder Management",
-  "Agile — Scrum & Kanban",
-  "Jira — workflows & automations",
-  "Confluence",
+  "End-to-End Project Ownership",
+  "Stakeholder Alignment & Communication",
+  "Process Structuring & Optimization",
+  "Agile Delivery — Scrum & Kanban",
+  "Jira — Workflow Design & Automations",
   "Scope, Timeline & Delivery",
-  "Client Communication",
+  "Scope, Prioritization & Delivery",
+  "Cross-functional Collaboration (Tech, Design, Product, Business)"
 ];
 
 const howIWork = [
-  { k: "Structure", v: "Defining scope, priorities and what success looks like." },
-  { k: "Cadence", v: "Organizing timelines, deliverables and a rhythm the team can sustain." },
-  { k: "Communication", v: "Clear, direct alignment with stakeholders — no ambiguity." },
-  { k: "Adaptation", v: "Reading change quickly and re-planning without losing direction." },
-  { k: "Delivery", v: "Shipping outcomes, even when the environment is complex." },
+  { k: "Structure", v: "Bringing clarity to scope, priorities and success criteria." },
+  { k: "Cadence", v: "Creating execution rhythm through structured timelines and deliverables." },
+  { k: "Communication", v: "Driving stakeholder alignment and decision-making." },
+  { k: "Adaptation", v: "Re-planning quickly in response to change while maintaining direction." },
+  { k: "Delivery", v: "Driving projects to completion under complexity and constraints." },
 ];
 
 const clients = [
@@ -46,6 +47,7 @@ const clients = [
   "HMASP",
   "Wolf Vision",
   "Perini Business Park",
+  "Abcasa Fair"
 ];
 
 function Index() {
@@ -58,15 +60,14 @@ function Index() {
             <div className="md:col-span-7">
               <p className="eyebrow flex items-center gap-3">
                 <span className="h-px w-6 bg-foreground/40" />
-                Project Manager · est. Tech & Innovation
+                Project Manager · Tech & Innovation
               </p>
               <h1 className="mt-8 font-serif text-5xl font-light leading-[1.02] tracking-tight text-foreground md:text-7xl lg:text-[5.5rem]">
                 Ana Vitória <em className="italic font-normal text-accent">Luz</em>
               </h1>
               <p className="mt-10 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-                I lead projects end-to-end — from scope and stakeholders to timeline
-                and delivery — in dynamic, resource-constrained environments where
-                structure and clarity make the difference.
+              I lead end-to-end project delivery in fast-paced environments, owning scope, timelines, stakeholders and execution.
+              I specialize in bringing structure to complex, resource-constrained projects — aligning teams, managing client communication and ensuring delivery under pressure.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
                 <Link
@@ -102,7 +103,7 @@ function Index() {
                 <div>
                   <p className="eyebrow">Tools of trade</p>
                   <p className="mt-2 text-sm text-foreground">
-                    Jira · Confluence · Scrum · Kanban
+                    Jira · Confluence · Scrum · Kanban · Trello · Notion · Project Libre 
                   </p>
                 </div>
               </div>
@@ -120,16 +121,13 @@ function Index() {
             </div>
             <div className="md:col-span-9">
               <p className="font-serif text-2xl font-light leading-snug tracking-tight text-foreground md:text-[2rem] md:leading-[1.25]">
-                I started as a developer and quickly moved into project
-                management, where I found my strength in connecting{" "}
+                I specialize in structuring complex projects
+                aligning{" "}
                 <em className="italic text-accent">strategy, execution and people</em>.
-                Over time, I evolved from intern to leading projects with full
-                ownership — scope, timeline, stakeholders, delivery.
+                Working closely with technical and cross-functional teams, I translate requirements into clear execution, keeping projects moving forward with clarity and direction.
               </p>
               <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                I work best in dynamic environments with small teams, structuring
-                processes, managing client relationships and ensuring projects
-                land — even under complex conditions.
+              I operate in dynamic, fast-paced environments, organizing processes, managing client relationships and ensuring delivery — even under complex conditions.
               </p>
             </div>
           </div>
@@ -232,31 +230,16 @@ function Index() {
       {/* PULL QUOTE */}
       <section className="border-b border-[var(--hairline)]">
         <div className="mx-auto max-w-5xl px-6 py-28 text-center md:px-10 md:py-36">
-          <p className="eyebrow">Career growth</p>
+          <p className="eyebrow">Background</p>
           <blockquote className="mt-8 font-serif text-3xl font-light leading-[1.2] tracking-tight text-foreground md:text-5xl">
-            “Started as an intern and rapidly progressed to{" "}
-            <em className="italic text-accent">managing projects</em> — taking
-            ownership of delivery, communication and process organization.”
+          Background in technology, leadership and innovation{" "}
+            <em className="italic text-accent">combining academic experience in Information Systems with international and interdisciplinary programs.</em> 
+            
           </blockquote>
         </div>
       </section>
 
-      {/* CLIENTS */}
-      <section className="border-b border-[var(--hairline)]">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-24">
-          <p className="eyebrow text-center">Projects & Clients</p>
-          <ul className="mt-12 grid grid-cols-2 gap-y-10 sm:grid-cols-3 md:grid-cols-5">
-            {clients.map((client) => (
-              <li
-                key={client}
-                className="text-center font-serif text-lg italic text-muted-foreground transition-colors hover:text-foreground md:text-xl"
-              >
-                {client}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+    
 
       {/* CONTACT CTA */}
       <section>

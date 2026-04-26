@@ -25,62 +25,62 @@ export const Route = createFileRoute("/projects/")({
 const systems = [
   {
     k: "Jira & Confluence",
-    v: "Led the implementation of Jira and Confluence as the team's operational backbone — from instance setup to adoption.",
+    v: "Owned the implementation and adoption of Jira and Confluence as the team’s core operational systems.",
   },
   {
     k: "Workflow Design",
-    v: "Designed custom workflows and automations to remove manual overhead and enforce consistency across squads.",
+    v: "Designed and optimized workflows and automations to improve efficiency and enforce consistency.",
   },
   {
     k: "Onboarding & Training",
-    v: "Structured onboarding paths and trained teams on tooling, agile rituals and internal documentation standards.",
+    v: "Enabled teams through structured onboarding and training across tools, agile practices and documentation.",
   },
   {
     k: "Intranet Migration",
-    v: "Led the migration of the company intranet from Google Sites to Confluence, restructuring information architecture in the process.",
+    v: "Led the migration and restructuring of the company intranet, improving accessibility and information flow.",
   },
   {
     k: "Process & Documentation",
-    v: "Defined and documented internal processes — turning tribal knowledge into a maintainable operational layer.",
+    v: "Established internal processes and documentation standards, creating a scalable operational foundation.",
   },
 ];
 
 const aiProjects = [
   {
     name: "OZHelp",
-    purpose: "Internal AI chatbot for employee support.",
+    purpose: "Led the development of an internal AI chatbot for employee support.",
     impact:
-      "Reduced repetitive support requests and gave employees instant, contextual answers — freeing internal teams for higher-value work.",
+      "Reduced repetitive support requests and enabled instant, contextual answers — freeing internal teams for higher-value work.",
   },
   {
     name: "OZAssist",
-    purpose: "AI assistant for product-related questions.",
+    purpose: "Led the creation of an AI assistant for product-related questions.",
     impact:
-      "Accelerated product knowledge access for internal and client-facing teams, reducing time-to-answer and improving consistency.",
+      "Accelerated access to product knowledge, reducing time-to-answer and improving consistency across teams.",
   },
   {
     name: "OZConverter",
-    purpose: "File conversion tool for map data.",
+    purpose: "Led the development of a file conversion tool for map data.",
     impact:
-      "Automated a previously manual conversion pipeline, cutting delivery time and eliminating a recurring source of errors.",
+      "Automated a manual pipeline, reducing delivery time and eliminating a recurring source of errors.",
   },
   {
     name: "OZCleanup",
-    purpose: "Data validation and digital twin consistency.",
+    purpose: "Led data validation and digital twin consistency initiatives.",
     impact:
-      "Ensured integrity across digital twin data, enabling reliable downstream automation and reporting.",
+      "Ensured data integrity across systems, enabling reliable automation and reporting.",
   },
   {
     name: "OZMonitoring",
-    purpose: "Network monitoring and visualization system.",
+    purpose: "Led the development of a monitoring and visualization system.",
     impact:
-      "Gave operations real-time visibility into infrastructure health, supporting faster diagnosis and proactive response.",
+      "Provided real-time visibility into infrastructure health, supporting faster diagnosis and proactive response.",
   },
   {
     name: "NetBox Integration",
-    purpose: "Infrastructure documentation system.",
+    purpose: "Led the implementation of an infrastructure documentation system.",
     impact:
-      "Centralized infrastructure documentation, replacing scattered records with a single source of truth for engineering teams.",
+      "Centralized documentation into a single source of truth, improving engineering efficiency and reliability.",
   },
 ];
 
@@ -126,7 +126,7 @@ function ProjectsIndex() {
         </div>
       </section>
 
-      {/* SYSTEMS & PROCESS IMPLEMENTATION */}
+      {/* SYSTEMS & PROCESS */}
       <section className="border-b border-[var(--hairline)]">
         <div className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
           <div className="grid gap-10 md:grid-cols-12">
@@ -136,11 +136,11 @@ function ProjectsIndex() {
             <div className="md:col-span-9">
               <h2 className="font-serif text-4xl font-light tracking-tight md:text-5xl">
                 Systems &{" "}
-                <em className="italic text-accent">process implementation</em>
+                <em className="italic text-accent">Processes </em>
               </h2>
               <p className="mt-5 max-w-xl text-base text-muted-foreground">
                 Beyond delivery, I lead the structuring of the tools and
-                processes teams rely on — turning operational chaos into a
+                processes teams rely on, turning operational chaos into a
                 maintainable foundation.
               </p>
               <dl className="mt-12 divide-y divide-[var(--hairline)] border-y border-[var(--hairline)]">
